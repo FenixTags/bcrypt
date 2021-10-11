@@ -13,7 +13,7 @@ def main():
     passHashed = passHashed.encode()
     passDehashed = None
 
-    print(f"{counter}", end="")
+    print(f"Intento: {counter}", end="")
     for i in range(minLen, maxLen):
         for j in product(character, repeat=i):
             word = "".join(j)
