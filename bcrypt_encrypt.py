@@ -5,7 +5,7 @@
 # ------------------------------------------------------------
 
 # Importamos la libreria bcrypt
-import bcrypt
+import bcrypt_encrypt
 
 # Texto plano
 textoPlano = "password"
@@ -18,13 +18,13 @@ print("Texto plano en bytes: ", textoPlano)
 input()
 
 # Generamos semilla
-semilla = bcrypt.gensalt()
+semilla = bcrypt_encrypt.gensalt()
 print("Semilla: ", semilla)
 print("Semilla Type: ", type(semilla))
 input()
 
 # Hasheamos el texto
-textHash = bcrypt.hashpw(textoPlano, semilla)
+textHash = bcrypt_encrypt.hashpw(textoPlano, semilla)
 print("Texto hash: ", textHash)
 input()
 
@@ -34,7 +34,7 @@ print("Texto Plano: ", textoPlano)
 print("Texto Hash: ", textHash)
 
 # Verificamos si coinciden con el metodo checkpw
-if bcrypt.checkpw(textoPlano, textHash):
+if bcrypt_encrypt.checkpw(textoPlano, textHash):
     print("Ok, las contraseñas coinciden")
 else:
     print("Contraseña incorrecta")
